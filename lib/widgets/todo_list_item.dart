@@ -12,6 +12,17 @@ class TodoListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Slidable(
+      endActionPane: ActionPane(
+        motion: const DrawerMotion(),
+        extentRatio: 0.25,
+        children: [
+          SlidableAction(
+            backgroundColor: Colors.red,
+            icon: Icons.delete,
+            onPressed: (context) {},
+          ),
+        ],
+      ),
       child: Container(
         decoration: BoxDecoration(
           color: Colors.grey[200],
@@ -38,15 +49,6 @@ class TodoListItem extends StatelessWidget {
           ],
         ),
       ),
-      actionExtentRatio: 0.25,
-      actionPane: const SlidableStrechActionPane(),
-      secondaryActions: [
-        IconSlideAction(
-          color: Colors.red,
-          icon: Icons.delete,
-          onTap: () {},
-        ),
-      ],
     );
   }
 }
