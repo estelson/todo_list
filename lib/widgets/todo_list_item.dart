@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class TodoListItem extends StatelessWidget {
-  const TodoListItem({Key? key}) : super(key: key);
+  const TodoListItem({Key? key, required this.title}) : super(key: key);
+
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -10,10 +12,11 @@ class TodoListItem extends StatelessWidget {
         color: Colors.grey[200],
         borderRadius: BorderRadius.circular(4),
       ),
+      margin: const EdgeInsets.symmetric(vertical: 2),
       padding: EdgeInsets.all(16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
+        children: [
           Text(
             "29/10/2022",
             style: TextStyle(
@@ -21,7 +24,7 @@ class TodoListItem extends StatelessWidget {
             ),
           ),
           Text(
-            "Tarefa 1",
+            title,
             style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w600,
