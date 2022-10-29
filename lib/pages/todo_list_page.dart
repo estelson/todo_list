@@ -38,14 +38,27 @@ class TodoListPage extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 16),
-
               ListView(
                 shrinkWrap: true,
                 children: [
-                  
+                  ListTile(
+                    title: Text("Tarefa 1"),
+                    subtitle: Text("28/10/2022"),
+                    leading: Icon(Icons.save, size: 30),
+                    onTap: () {
+                      print("Tarefa 1 clicada");
+                    },
+                  ),
+                  ListTile(
+                    title: Text("Tarefa 2"),
+                    subtitle: Text("29/10/2022"),
+                    leading: Icon(Icons.person, size: 30),
+                    onTap: () {
+                      print("Tarefa 2 clicada");
+                    }
+                  ),
                 ],
               ),
-
               SizedBox(height: 16),
               Row(
                 children: [
