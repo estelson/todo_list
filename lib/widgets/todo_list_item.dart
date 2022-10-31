@@ -5,9 +5,14 @@ import 'package:intl/intl.dart';
 import '../models/todo.dart';
 
 class TodoListItem extends StatelessWidget {
-  const TodoListItem({Key? key, required this.todo}) : super(key: key);
+  const TodoListItem({
+    Key? key,
+    required this.todo,
+    required this.onDelete,
+  }) : super(key: key);
 
   final Todo todo;
+  final Function(Todo) onDelete;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +27,9 @@ class TodoListItem extends StatelessWidget {
               label: "Excluir",
               backgroundColor: Colors.red,
               icon: Icons.delete,
-              onPressed: (context) {},
+              onPressed: (context) {
+                onDelete(todo);
+              },
             ),
           ],
         ),
